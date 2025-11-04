@@ -149,7 +149,8 @@ $font-main: 'Inter', sans-serif;
     flex-wrap: wrap;
 
     .plan {
-      background-color: darken($secondary-color, 5%);
+    @use "sass:color";
+    background-color: color.adjust($secondary-color, $lightness: -5%);
       padding: 1.5rem;
       border-radius: 0.5rem;
       text-align: center;
@@ -170,8 +171,8 @@ $font-main: 'Inter', sans-serif;
         text-decoration: none;
         transition: background 0.3s;
 
-        &:hover { background-color: scale-color($primary-color, $lightness: -10%);
- }
+       @use "sass:color";
+&:hover { background-color: color.adjust($primary-color, $lightness: -10%); }
       }
     }
   }
